@@ -20,6 +20,12 @@ if (process.env.MESSAGE_STYLE == "uppercase"){
     res.json({"message":response})
   
 })
+app.get('/now', function(req, res, next){
+        req.time = new Date().toString();
+  next();
+        }, function(req, res){
+  res.send(req.time)
+})
 app.use(express.static(__dirname + "/public"))
 
 // make app accessible to other files
