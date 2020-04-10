@@ -1,10 +1,8 @@
 
 var express = require('express');
 var app = express();
-console.log("Hello World")
-app.get('/',function(req,res){
-res.sendFile(__dirname + "/views/index.html")
-})
+
+
 app.listen(PORT)
 
 // --> 7)  Mount the Logger middleware here
@@ -14,16 +12,18 @@ app.listen(PORT)
 
 
 /** 1) Meet the node console. */
-
+console.log("Hello World")
 
 /** 2) A first working Express Server */
 
 
 /** 3) Serve an HTML file */
-
+app.get('/',function(req,res){
+    res.sendFile(__dirname + "/views/index.html")
+    })
 
 /** 4) Serve static assets  */
-
+app.use(express.static(__dirname + "/public"))
 
 /** 5) serve JSON on a specific route */
 
