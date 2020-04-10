@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 
-app.listen(PORT)
+app.listen(3000)
 
 // --> 7)  Mount the Logger middleware here
 
@@ -13,6 +13,9 @@ app.listen(PORT)
 
 /** 1) Meet the node console. */
 console.log("Hello World")
+
+console.log(process.env.MESSAGE_STYLE)
+// never put space between variable name and value in the dot env file. .env file is a shell file
 
 /** 2) A first working Express Server */
 
