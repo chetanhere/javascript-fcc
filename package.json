@@ -1,19 +1,17 @@
 {
-  "name": "first-proj",
-  "version": "1.0.0",
-  "description": "fcc project",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chetanhere/javascript-fcc.git"
-  },
-  "author": "chetan vashistth",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/chetanhere/javascript-fcc/issues"
-  },
-  "homepage": "https://github.com/chetanhere/javascript-fcc#readme"
+	"name": "fcc-learn-node-with-express",
+	"version": "0.1.0",
+	"dependencies": {
+		"express": "^4.14.0",
+		"body-parser": "^1.15.2",
+		"cookie-parser": "^1.4.3",
+		"fcc-express-bground": "https://github.com/Em-Ant/fcc-express-bground-pkg.git"
+	},
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"engines": {
+		"node": "4.4.5"
+	}
 }
