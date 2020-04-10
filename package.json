@@ -1,1 +1,19 @@
-"author": "Chetan Vashistth"
+{
+  "name": "first-proj",
+  "version": "1.0.0",
+  "description": "fcc project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chetanhere/javascript-fcc.git"
+  },
+  "author": "chetan vashistth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chetanhere/javascript-fcc/issues"
+  },
+  "homepage": "https://github.com/chetanhere/javascript-fcc#readme"
+}
