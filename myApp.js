@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 // console.log(__dirname + "/views/index.html")
 app.get('/',function(req,res){
@@ -10,6 +11,7 @@ app.use(function(req,res,next){
   console.log(string)
   next()
 })
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/json',function(req,res){
   var response = "Hello json"
@@ -26,23 +28,25 @@ app.get('/now', function(req, res, next){
         }, function(req, res){
   res.send({"time":req.time})
 })
-
 app.get('/:word/echo', function(req, res){
-    const {word} = req.params;
-    res.json({"echo": word})
-  })
-
-
-  app.get("/name", function(req, res) {
-    var firstName = req.query.first;
-    var lastName = req.query.last;
-    // OR you can destructure and rename the keys
-    var { first: firstName, last: lastName } = req.query;
-    // Use template literals to form a formatted string
-    res.json({
-      name: `${firstName} ${lastName}`
-    });
+  const {word} = req.params;
+  res.json({"echo": word})
+})
+app.get("/name", function(req, res) {
+  var firstName = req.query.first;
+  var lastName = req.query.last;
+  // OR you can destructure and rename the keys
+  //var { first: firstName, last: lastName } = req.query;
+  // Use template literals to form a formatted string
+  res.json({
+    name: `${firstName} ${lastName}`
   });
+});
+
+app.post('/name', function(req, res){
+  var string = req.body.first + " " + req.body.last;
+  res.json({name:string})
+})
 app.use(express.static(__dirname + "/public"))
 
 // make app accessible to other files
