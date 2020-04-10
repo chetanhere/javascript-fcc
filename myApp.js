@@ -26,6 +26,11 @@ app.get('/now', function(req, res, next){
         }, function(req, res){
   res.send({"time":req.time})
 })
+
+app.get('/:word/echo', function(req, res){
+    const {word} = req.params;
+    res.json({"echo": word})
+  })
 app.use(express.static(__dirname + "/public"))
 
 // make app accessible to other files
